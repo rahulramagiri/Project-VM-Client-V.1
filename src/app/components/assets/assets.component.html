@@ -1,0 +1,22 @@
+<h1 class="mb-5 text-2xl">Assets</h1>
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let asset of assets">
+    <mat-expansion-panel-header>
+      <mat-panel-title>{{ asset.assetTag }} </mat-panel-title>
+      <mat-panel-title> {{ asset.assetName }} </mat-panel-title>
+      <mat-panel-title> {{ asset.assetType }} </mat-panel-title>
+      <mat-panel-description>{{ asset.description }}</mat-panel-description>
+    </mat-expansion-panel-header>
+    <a [routerLink]="['/edit', asset._id]">
+      <button mat-flat-button color="accent" class="mr-3">Edit</button>
+    </a>
+    <button mat-raised-button color="warn" (click)="onDelete(asset._id)">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Example home icon"
+        fontIcon="delete"
+      ></mat-icon>
+      <label for="">Delete</label>
+    </button>
+  </mat-expansion-panel>
+</mat-accordion>

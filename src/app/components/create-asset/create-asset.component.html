@@ -1,0 +1,58 @@
+<div class="w-80">
+  <h1 class="mb-5 text-2xl">Create a New Asset</h1>
+  <form [formGroup]="assetForm" class="text-center">
+    <!-- form inputs -->
+    <mat-form-field color="accent" class="w-full">
+      <mat-label>Asset ID</mat-label>
+      <input
+        type="number"
+        formControlName="assetTag"
+        matInput
+        placeholder="Ex: 8900"
+      />
+    </mat-form-field>
+
+    <mat-form-field color="accent" class="w-full">
+      <mat-label>Asset Name</mat-label>
+      <input
+        type="text"
+        formControlName="assetName"
+        matInput
+        placeholder="Ex: Macbook air"
+      />
+    </mat-form-field>
+
+    <mat-form-field color="accent" class="w-full">
+      <mat-label>Description</mat-label>
+      <input
+        type="text"
+        formControlName="description"
+        matInput
+        placeholder="details about asset"
+      />
+    </mat-form-field>
+
+    <mat-form-field color="accent" class="w-full">
+      <mat-label>Asset Type</mat-label>
+      <input
+        type="text"
+        formControlName="assetType"
+        matInput
+        placeholder="Ex: Laptop, Hard disk"
+      />
+    </mat-form-field>
+
+    <!-- submit button -->
+    <button
+      type="submit"
+      (click)="onSubmitForm()"
+      mat-flat-button
+      color="accent"
+      [disabled]="assetForm.invalid"
+    >
+      Create Asset
+    </button>
+  </form>
+</div>
+
+

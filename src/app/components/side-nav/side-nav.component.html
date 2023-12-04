@@ -1,0 +1,54 @@
+<!-- Navbar -->
+<mat-toolbar>
+  <div class="px-4 flex items-center">
+    <button
+      (click)="drawer.toggle()"
+      class="hover:bg-slate-700 rounded p-2 mr-5"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-8 h-8"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+        />
+      </svg>
+    </button>
+    <img src="../../../assets/images/LIGHT.png" alt="logo" class="h-10" />
+  </div>
+</mat-toolbar>
+
+<!-- sidenav -->
+<mat-drawer-container hasBackdrop="true" class="h-full">
+  <mat-drawer #drawer mode="side" class="w-56 p-4">
+    <div *ngFor="let navLink of navData">
+      <button class="text-lg w-full">
+        <a
+          [routerLink]="navLink.routerLink"
+          class="flex p-3 rounded hover:bg-slate-800 active:scale-95"
+        >
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            [fontIcon]="navLink.icon"
+            class="mr-3"
+          ></mat-icon>
+          <p>{{ navLink.label }}</p>
+        </a>
+      </button>
+    </div>
+  </mat-drawer>
+  <!-- content -->
+  <mat-drawer-content>
+    <div class="px-8 py-4">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
+<!-- <button mat-raised-button (click)="drawer.toggle()"> -->
