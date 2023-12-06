@@ -6,8 +6,10 @@ export interface Asset {
   assetType: string;
   history?: [
     {
+      field: String;
+      oldValue: any;
+      newValue: any;
       timestamp: Date;
-      changes: [{ field: string; oldValue: any; newValue: any }];
     }
   ];
 }

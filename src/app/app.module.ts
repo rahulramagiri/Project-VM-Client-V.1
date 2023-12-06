@@ -20,6 +20,7 @@ import { HistoryComponent } from './components/history/history.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule,
     MatInputModule,
     MatExpansionModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent],
